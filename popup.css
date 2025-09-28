@@ -1,0 +1,189 @@
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url('./poppins/Poppins-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    src: url('./poppins/Poppins-Medium.ttf') format('truetype');
+}
+
+body {
+    font-family: Poppins, serif;
+    min-width: 350px;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    max-height: max(600px, 100vh);
+}
+
+.table-container {
+    flex-grow: 1;
+    overflow: auto;
+}
+
+table {
+    width: 100%;
+    font-weight: 400;
+    padding: 8px;
+    border-spacing: 0;
+}
+
+td, th {
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+th {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+td.time {
+    font-size: 14px;
+    line-height: 16px;
+    color: #333;
+}
+
+td:first-child, th:first-child {
+    padding-left: 2px;
+}
+
+td:last-child, th:last-child {
+    padding-right: 2px;
+}
+
+tbody tr:first-child {
+    padding-top: 12px;
+}
+
+tbody tr:nth-child(2n) {
+    background-color: #f9f9f9;
+}
+
+tbody tr:nth-child(2n-1) td {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+thead th {
+    font-size: 11px;
+    line-height: 14px;
+    color: #4d4d4d;
+    border-bottom: 1px solid #f0f0ef;
+    padding: 2px;
+}
+
+thead th:nth-child(1) {
+    text-align: start;
+}
+
+thead th:nth-child(2), thead th:nth-child(3) {
+    text-align: end;
+}
+
+tbody td.total-after {
+    text-align: end;
+}
+
+tbody td.amount {
+    text-align: end;
+    font-size: 14px;
+    line-height: 16px;
+    color: #d0021b;
+}
+
+.h1-container {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    min-height: 48px;
+    box-sizing: border-box;
+    background-color: #0077b5;
+    color: white;
+}
+
+h1 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.15;
+}
+
+#loading {
+    height: 200px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+#loading p {
+    width: 100%;
+    font-size: 14px;
+}
+
+/*
+Make the font a bit bigger on mobile, for legibility.
+The px sizes don't come in handy here but I used px since that's what the official website uses.
+
+Also the top bar looks better on mobile when it resembles the website's top bar.
+
+The media query works because desktop browsers clamp the popup to a height of 600px while mobile screens are usually larger than that.
+*/
+@media screen and (min-height: 601px) {
+    body {
+        display: block;
+        font-size: 1.2em;
+    }
+
+    .h1-container {
+        background: rgba(255, 255, 255, .9);
+        box-shadow: 0 1px 8px 0 rgba(92, 92, 92, .16);
+        backdrop-filter: blur(12px);
+        color: #333;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+
+    table {
+        margin-top: 16px;
+    }
+
+    td.time {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    thead th {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    tbody td.amount {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    h1 {
+        font-size: 16px;
+        line-height: 1.15;
+    }
+
+    td, th {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    tbody tr:nth-child(2n-1) td {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+}
