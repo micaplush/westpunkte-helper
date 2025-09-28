@@ -1,3 +1,5 @@
+![The logo used by Westbahn before September 2025 with the colors replaced to resemble the trans flag](./trans-westbahn.svg)
+
 # WestPunkte Helper
 
 WestPunkte Helper enhances the [Westbahn](https://westbahn.at) website by providing an overview of expiry dates for currently held <sup>West</sup>Punkte.
