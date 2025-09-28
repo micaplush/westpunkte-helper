@@ -2,12 +2,11 @@
   "manifest_version": 2,
   "name": "WestPunkte Helper",
   "description": "Displays expiring WestPunkte on westbahn.at",
-  "version": "0.1",
+  "version": "1.0",
 
   "browser_specific_settings": {
     "gecko": {
-      "id": "westpunkte-helper@mica.lgbt",
-      "strict_min_version": "58.0"
+      "id": "westpunkte-helper@mica.lgbt"
     }
   },
 
