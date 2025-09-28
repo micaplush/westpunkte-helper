@@ -22,7 +22,6 @@ async function init() {
         const row = document.createElement("tr")
         const cellTime = document.createElement("td")
         cellTime.className = "time"
-        cellTime.innerText = transaction.expiry.toUTCString().replace(" 00:00:00 GMT", "")
         cellTime.innerText = `${zeroPad(transaction.expiry.getDate())}.${zeroPad(transaction.expiry.getMonth() + 1)}.${transaction.expiry.getFullYear()}`
         row.appendChild(cellTime)
         const cellAmount = document.createElement("td")
