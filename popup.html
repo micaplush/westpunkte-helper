@@ -1,0 +1,156 @@
+<style>
+    @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        src: url('./poppins/Poppins-Regular.ttf') format('truetype');
+    }
+
+    @font-face {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 500;
+        src: url('./poppins/Poppins-Medium.ttf') format('truetype');
+    }
+
+    body {
+        font-family: Poppins, serif;
+        width: 350px;
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        max-height: 600px;
+    }
+
+    .table-container {
+        flex-grow: 1;
+        overflow: auto;
+    }
+
+    table {
+        width: 100%;
+        font-weight: 400;
+        padding: 8px;
+        border-spacing: 0;
+    }
+
+    td, th {
+        padding-top: 4px;
+        padding-bottom: 4px;
+    }
+
+    th {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    td.time {
+        font-size: 14px;
+        line-height: 16px;
+        color: #333;
+    }
+
+    td:first-child, th:first-child {
+        padding-left: 2px;
+    }
+
+    td:last-child, th:last-child {
+        padding-right: 2px;
+    }
+
+    tbody tr:first-child {
+        padding-top: 12px;
+    }
+
+    tbody tr:nth-child(2n) {
+        background-color: #f9f9f9;
+    }
+
+    tbody tr:nth-child(2n-1) td {
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+
+    thead th {
+        font-size: 11px;
+        line-height: 14px;
+        color: #4d4d4d;
+        border-bottom: 1px solid #f0f0ef;
+        padding: 2px;
+    }
+
+    thead th:nth-child(1) {
+        text-align: start;
+    }
+
+    thead th:nth-child(2), thead th:nth-child(3) {
+        text-align: end;
+    }
+
+    tbody td.total-after {
+        text-align: end;
+    }
+
+    tbody td.amount {
+        text-align: end;
+        font-size: 14px;
+        line-height: 16px;
+        color: #d0021b;
+    }
+
+    .h1-container {
+        display: flex;
+        align-items: center;
+        padding: 8px;
+        min-height: 48px;
+        box-sizing: border-box;
+        background-color: #0077b5;
+        color: white;
+    }
+
+    h1 {
+        margin: 0;
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.15;
+    }
+
+    #loading {
+        height: 200px;
+        width: 100%;
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+
+    #loading p {
+        width: 100%;
+    }
+</style>
+
+<div class="h1-container">
+    <h1>My <sup>West</sup>Punkte</h1>
+    <div style="flex-grow: 1;"></div>
+    <h1 id="current-total"></h1>
+</div>
+
+<div id="loading">
+    <p><sup>West</sup>Loading...</p>
+</div>
+
+<div class="table-container">
+    <table style="display: none;" id="table">
+        <thead>
+            <tr>
+                <th>Expiry date</th>
+                <th>Amount</th>
+                <th>Remaining</th>
+            </tr>
+        </thead>
+        <tbody id="tbody"></tbody>
+    </table>
+</div>
+
+<script src="popup.js"></script>

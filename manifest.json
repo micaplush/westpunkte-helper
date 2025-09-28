@@ -1,0 +1,36 @@
+{
+  "manifest_version": 2,
+  "name": "WestPunkte Helper",
+  "description": "Displays expiring WestPunkte on westbahn.at",
+  "version": "0.1",
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "westpunkte-helper@mica.lgbt",
+      "strict_min_version": "58.0"
+    }
+  },
+
+  "icons": {
+    "32": "trans-westbahn.svg",
+    "64": "trans-westbahn.svg",
+    "128": "trans-westbahn.svg"
+  },
+
+  "permissions": ["*://westbahn.at/*"],
+
+  "page_action": {
+    "default_icon": "trans-westbahn.svg",
+    "default_title": "WestPunkte Helper",
+    "default_popup": "popup.html",
+    "show_matches": ["*://westbahn.at/*"]
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://westbahn.at/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
